@@ -1,6 +1,4 @@
 # InteraktionsdesignWS20_21
-Jonas Plotzky
-
 [Github.io](https://plojo.github.io/InteraktionsdesignWS20_21/index.html)
 
 ## Tasks
