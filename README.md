@@ -4,4 +4,4 @@
 ## Tasks
 * [Task #00](https://plojo.github.io/InteraktionsdesignWS20_21/Task00/)
 * [Task #01](https://plojo.github.io/InteraktionsdesignWS20_21/Task01/)
-* [Task #01](https://plojo.github.io/InteraktionsdesignWS20_21/Task02/)
+* [Task #02](https://plojo.github.io/InteraktionsdesignWS20_21/Task02/)
