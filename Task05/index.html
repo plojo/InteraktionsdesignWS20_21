@@ -36,7 +36,15 @@
         mehr
         wissen will, wird er nach dem zwei Termine erwähnt wurden und nach einem spezifischen gefragt wurden, aufhören
         erneut zu prompten. Die Dialog-Stränge enden in meiner Anwendung wenn nicht innerhalb von ein
-        paar Sekunden geantwortet wird.
+        paar Sekunden geantwortet wird. <br />
+        Für die Darstellung des Dialog Flow habe ich mich an den <a
+            href="https://developer.amazon.com/de-DE/docs/alexa/alexa-design/script.html">Amazon Alexa’s Design
+            Guidelines</a> orientiert. In unserer Anwendung wird das Gespräch allerdings vom Assitenten initiert. Die
+        Gesprächsstücke sind dann in Utterance (des Nutzers), Situation (des Gesprächs aus Sicht des Assistenten),
+        Response (des Assistenten) und Prompt (des
+        Assistenten) aufgeteilt. Die Gesprächsstücke sind über Pfeile verbunden. Wenn mehrere Pfeile ein Gesprächsstück
+        verlassen heißt dies, dass sich hier der Gespächsverlauf aufspaltet. So entstehen mehrer veschiedene Pfade wie
+        das Gespräch ablaufen kann.
     </p>
     <figure>
         <img class="modalImg" src="vui.png">
