@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task05</title>
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="local.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div id="imgModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+    <h1>Prototype a Voice User Interface</h1>
+    <h2>
+        Storyboard
+    </h2>
+    <p>
+        Meine Anwendung startet mit einer Push-Nachricht die man morgens erhält nachdem man seinen Wecker ausgeschaltet
+        hat also wenn man aufsteht. Der Assistent weißt einen darauf hin, dass man Termine hat und fordert dann auf
+        weiter nach den Terminen zu fragen.
+    </p>
+    <figure>
+        <img class="modalImg" src="storyboard.jpg">
+        <figcaption>Storyboard</figcaption>
+    </figure>
+    <h2>
+        Dialog Flow
+    </h2>
+    <p>
+        Nach dem Testen stellte sich herraus, dass viele verschiedene Fragen zu den heutigen Terminen gestellt werden
+        können. Theoretisch entsteht so eine viel Zahl von möglichen Pfaden. Für meinen Dialog Flow habe ich nur einen
+        Teil der möglichen Pfade dargestellt. Da ich nicht will, dass der Assistent immer wieder promptet ob man noch
+        mehr
+        wissen will, wird er nach dem zwei Termine erwähnt wurden und nach einem spezifischen gefragt wurden, aufhören
+        erneut zu prompten. Die Dialog-Stränge enden in meiner Anwendung wenn nicht innerhalb von ein
+        paar Sekunden geantwortet wird.
+    </p>
+    <figure>
+        <img class="modalImg" src="vui.png">
+        <figcaption>Dialog Flow</figcaption>
+    </figure>
+    <h2>
+        Weitere Überlegungen
+    </h2>
+    <p>
+        Wenn nur ein Termin (oder gar keiner) ansteht kann kein längeres Gespräch entstehen. In diesem Fall könnte der
+        Assistent fragen ob man etwas vorhat und dann in einen anderen Anwendungsfall zum Erstellen von Terminen wechseln.
+    </p>
+</body>
+
+</html>
