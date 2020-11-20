@@ -182,9 +182,13 @@ window.addEventListener("load", function (): void {
     }
 
     function promptAskForDetails(_promptCounter: number = 0, _appointmentFound: boolean = true): void {
+        let randomSuggestion: string = [
+            `'Wo findet ${appointments[0].name} statt?'`,
+            `'Wann findet ${appointments[2].name} statt?'`,
+        ][Math.floor(Math.random() * 2)];
         let question: string = `${_appointmentFound ? "" : "Das habe ich nicht Verstanden."} Wenn du ${_promptCounter < 1 ? "genauere" : "weitere"} Informationen zu deinen Terminen haben willst `
         if (_promptCounter < 1)
-            question += `sag zum Beispiel 'Wo findet ${appointments[0].name} statt?'`;
+            question += `sag zum Beispiel ${randomSuggestion}`;
         else
             question += "frag einfach nach";
 
