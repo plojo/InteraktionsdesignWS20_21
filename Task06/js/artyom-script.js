@@ -48,6 +48,7 @@ window.addEventListener("load", function () {
                 debug: true
             }).then(function () {
                 console.log("Ready!");
+                artyom.say("Guten Morgen, Zeit aufzustehen. Es ist jetzt 8 Uhr. Für heute stehen mehrere Termine für dich an. Wenn du wissen willst was du heute geplant hast sag zum Beispiel 'Wie lautet mein erster Termin'");
             });
         }, 250);
     }
@@ -102,7 +103,6 @@ window.addEventListener("load", function () {
         let randomSuggestion = [
             "'Wie lautet mein nächster Termin'",
             "'Was habe ich noch vor'",
-            "'Wie lautet mein erster Termin'",
             "'Wie lautet mein zweiter Termin'",
         ][Math.floor(Math.random() * 4)];
         let question = `Du hast noch ${remainingAppointments.length == 1 ? "einen weiteren Termin" : (remainingAppointments.length + " weitere Termine")}. Wenn du wissen willst was du noch vor hast `;
@@ -216,4 +216,4 @@ window.addEventListener("load", function () {
         }
     }
 });
-//# sourceMappingURL=playgroud-artyom-script.js.map
+//# sourceMappingURL=artyom-script.js.map
