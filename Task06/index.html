@@ -7,13 +7,38 @@
     <title>Task06</title>
     <link rel="stylesheet" href="../CSS/main.css">
     <!-- <link rel="stylesheet" href="local.css"> -->
-    <script src="js/main.js"></script>
+    <!-- <script src="js/main.js"></script> -->
     <script src="js/libs/artyom.window.min.js"></script>
     <script src="js/artyom-script.js"></script>
 </head>
 
 <body>
-    <button id="start">Start</button>
+    <h1>VUI Prototyping</h1>
+    <p>
+        Meine Anwendung startet mit einer Push-Nachricht die man morgens erhält nachdem man seinen Wecker ausgeschaltet
+        hat also wenn man aufsteht. Der Assistent weißt einen darauf hin, dass man Termine hat und fordert dann auf
+        weiter nach den Terminen zu fragen.
+    </p>
+    <p>
+        Einige Veränderungen der Programmlogik im Vergleich zum geplanten Prototyp wurden vorgenommen:
+        <ul>
+            <li>Die Prompts hören erst auf wenn der User "Stopp" sagt.</li>
+            <li>Die Prompts enthalten Vorschläge was der User als nächstes Fragen kann. Nach ein paar Prompts werden keine Vorschläge mehr gemacht.</li>
+        </ul>
+    </p>
+    <p>
+        Folgende Termine sind im Code fest hinterlegt:
+        <ul id="appointments">
+        </ul>
+    </p>
+    <h3>
+        Demo Video:
+    </h3>
+    <video src="VUI_demo.mp4" width="320" height="240" controls></video>
+    <p>
+        Zum selber Testen des VUI einfach auf "Start" klicken (funktioniert in Chrome):
+    </p>
+    <button id="start"><span>Start</span></button>
 </body>
 
 </html>

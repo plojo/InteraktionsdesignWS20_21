@@ -37,6 +37,22 @@ window.addEventListener("load", function () {
         `'Wann findet ${appointments[4].name} statt?'`,
         `'Wo findet ${appointments[3].name} statt?'`
     ];
+    let ul = document.getElementById("appointments");
+    for (const appointment of appointments) {
+        let template = document.createElement("template");
+        template.innerHTML =
+            `<li>
+            <ul>
+                <li>Terminname: ${appointment.name}</li>
+                <li>Uhrzeit: ${appointment.time} Uhr</li>
+                <li>Ort: ${appointment.location}</li>
+            </ul>
+        </li>`;
+        ul.appendChild(template.content.childNodes[0]);
+        console.log(template);
+    }
+    mapAppointments();
+    document.getElementById("start").addEventListener("click", start);
     artyom.addCommands({
         description: "Liste alle Termine",
         indexes: [/was habe ich heute vor/, /alle Termine/],
@@ -54,8 +70,6 @@ window.addEventListener("load", function () {
             appointmentByCounter(_wildcard);
         }
     });
-    mapAppointments();
-    document.getElementById("start").addEventListener("click", start);
     function start() {
         artyom.fatality();
         setTimeout(function () {
