@@ -35,9 +35,58 @@
         wohl nicht das beste Material für ein Gamepad darstellt (nutzt sich extrem schnell ab / quasi kein haptisches
         Feedback). Auch scheint die Leitfähigkeit von Graphit nur beschränkt zu sein weshalb Knöpfe sehr nah am
         Inputkabel des ESP platziert sein müssen damit dieser noch einen Input ermitteln kann. Unter anbetrachtet dieser
-        Umstände sollte vielleicht auf ein anderes Material zurückgegriffen werden, hierzu ist mir aber zum Zeitpunkt des
+        Umstände sollte vielleicht auf ein anderes Material zurückgegriffen werden, hierzu ist mir aber zum Zeitpunkt
+        des
         Schreibens noch nichts besseres eingefallen.
     </p>
+    <h2>Update</h2>
+    <p>
+        Anstelle Papier und Graphit zu benutzen kam ich nach rücksprache mit Kommilitonen auf die Idee für meinen
+        Controller lieber Pappe und Alufolie zu nutzen. Folgendes Konzept wurde erdacht:
+    </p>
+    <h3>Konzept Cube Controller</h3>
+    <p>
+        Der Controller besteht aus einem Würfel aus Pappe in dessen Mitte sich der Esp befindet. Die Kontakte werden
+        durch die Wände des Würfels durchgesteckt und von aussen zum Komfor mit Alufolie verkleidet. 8 Buttons sollen
+        zur Verfügung stehen und der Grafik entsprechend um den Würfel verteilt sein. <br /> Ein solcher Controller ist
+        zum spielen natürlich eigentlich eher unhandlich aber es könnte dennoch interessant sein damit zu spielen. Die
+        Herausforderung sollte dann nicht das Spiel sein sondern eben das Eingabegerät also der Controller.
+    </p>
+    <figure>
+        <img class="modalImg" src="4.jpg">
+        <figcaption>Konzept Cube Controller</figcaption>
+    </figure>
+    <figure>
+        <img class="modalImg" src="5.jpg">
+        <figcaption>Konzept Button-Verteilung</figcaption>
+    </figure>
+    <h3>Umsetzung</h3>
+    <p>
+        Zunächst wurde eine Sketch geschrieben damit sich der ESP wie ein Bluetooth-Controller verhält. Dazu wurden folgende Repositories als Vorbild verwendet: <a href="https://github.com/scottlawsonbc/espjoy">espjoy</a> und <a href="https://github.com/lemmingDev/ESP32-BLE-Gamepad">ESP32-BLE-Gamepad</a>. Da ich eine Aufteilung des Codes in mehrere Dateien vermeiden wollte habe ich allen Code in eine eizige Sketch-Datei gepackt: 
+        Entsprchend dem Konzept wurde ein Prototyp angelegt:
+    </p>
+    <figure>
+        <img class="modalImg" src="3.jpg">
+        <figcaption>Würfel Schablone einzeichen</figcaption>
+    </figure>
+    <figure>
+        <img class="modalImg" src="6.jpg">
+        <figcaption>Nach dem ausschneiden</figcaption>
+    </figure>
+    <figure>
+        <img class="modalImg" src="7.jpg">
+        <figcaption>Esp mit weichem Material fixieren</figcaption>
+    </figure>
+    <figure>
+        <img class="modalImg" src="8.jpg">
+        <figcaption>Würfel Controller von innen</figcaption>
+    </figure>
+    <figure>
+        <img class="modalImg" src="9.jpg">
+        <figcaption>Fertiger Controller</figcaption>
+    </figure>
+
+
 </body>
 
 </html>
