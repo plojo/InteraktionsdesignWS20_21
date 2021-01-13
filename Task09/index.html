@@ -17,8 +17,8 @@
     <p>
         Mit den 10 Touch-Inputs die uns auf unserem ESP zur Verfügung stehen könnte man einen interaktiv erstellbares
         Gamepad
-        bauen. Die Nutzer können sich ihre 10 Buttons frei auf ein Blatt Papier malen und dort beliebig verteilen (das
-        Layout und die Größe der Knöpfe ist so frei wählbar). Diese Buttons kann dann der ESP interpretieren und
+        bauen. Die Nutzer können sich ihre 10 Knöpfe frei auf ein Blatt Papier malen und dort beliebig verteilen (das
+        Layout und die Größe der Knöpfe ist so frei wählbar). Diese Knöpfe kann dann der ESP interpretieren und
         entsprechende Signale an z.B. einen PC senden (Über WLAN/Bluetooth/USB). Der PC erkennt den Mikrocomputer dann
         als normales Gamepad/Controller.
     </p>
@@ -47,7 +47,7 @@
     <h3>Konzept Cube Controller</h3>
     <p>
         Der Controller besteht aus einem Würfel aus Pappe in dessen Mitte sich der Esp befindet. Die Kontakte werden
-        durch die Wände des Würfels durchgesteckt und von aussen zum Komfor mit Alufolie verkleidet. 8 Buttons sollen
+        durch die Wände des Würfels durchgesteckt und von aussen zum Komfor mit Alufolie verkleidet. 8 Knöpfe sollen
         zur Verfügung stehen und der Grafik entsprechend um den Würfel verteilt sein. <br /> Ein solcher Controller ist
         zum spielen natürlich eigentlich eher unhandlich aber es könnte dennoch interessant sein damit zu spielen. Die
         Herausforderung sollte dann nicht das Spiel sein sondern eben das Eingabegerät also der Controller.
@@ -62,9 +62,17 @@
     </figure>
     <h3>Umsetzung</h3>
     <p>
-        Zunächst wurde eine Sketch geschrieben damit sich der ESP wie ein Bluetooth-Controller verhält. Dazu wurden folgende Repositories als Vorbild verwendet: <a href="https://github.com/scottlawsonbc/espjoy">espjoy</a> und <a href="https://github.com/lemmingDev/ESP32-BLE-Gamepad">ESP32-BLE-Gamepad</a>. Da ich eine Aufteilung des Codes in mehrere Dateien vermeiden wollte habe ich allen Code in eine eizige Sketch-Datei gepackt: 
-        Entsprchend dem Konzept wurde ein Prototyp angelegt:
+        Zunächst wurde eine Sketch geschrieben damit sich der ESP wie ein Bluetooth-Controller verhält. Dazu wurden
+        folgende Repositories als Vorbild verwendet: <a href="https://github.com/scottlawsonbc/espjoy">espjoy</a> und <a
+            href="https://github.com/lemmingDev/ESP32-BLE-Gamepad">ESP32-BLE-Gamepad</a>. Da ich eine Aufteilung des
+        Codes in mehrere Dateien vermeiden wollte habe ich allen Code in eine eizige <a
+            href="https://github.com/plojo/InteraktionsdesignWS20_21/blob/main/Task09/CustomController.ino">Sketch</a>
+        gepackt. Vier der 8 Knöpfe verhalten sich in meinem Controller als D-pad (Steuerkreuz). Die anderen vier
+        Knöpfe sind
+        Aktionsknöpfe.
+
     </p>
+    <p>Entsprchend dem Konzept wurde ein Prototyp angelegt:</p>
     <figure>
         <img class="modalImg" src="3.jpg">
         <figcaption>Würfel Schablone einzeichen</figcaption>
@@ -79,13 +87,72 @@
     </figure>
     <figure>
         <img class="modalImg" src="8.jpg">
-        <figcaption>Würfel Controller von innen</figcaption>
+        <figcaption>ESP im Controller</figcaption>
     </figure>
+    <p>Der Controller wurde wie geplant von aussen mit Alufolie-Knöpfen versehen</p>
     <figure>
         <img class="modalImg" src="9.jpg">
         <figcaption>Fertiger Controller</figcaption>
     </figure>
-
+    <h3>Test</h3>
+    <p>
+        Windows präsentiert sich mein Controller als "Custom Controller" und kann auch einfach über Bluetooth gekoppelt
+        und verbunden werden.
+    </p>
+    <figure>
+        <img class="modalImg" src="10.png">
+        <figcaption>Fertiger Controller</figcaption>
+    </figure>
+    <figure>
+        <img class="modalImg" src="11.png">
+        <figcaption>Fertiger Controller</figcaption>
+    </figure>
+    <p>
+        Um die Controller-Funktionalität zu testen wurde joy.cpl aufgerufen. Hier lassen sich angschlossene Controller
+        überprüfen. Die zwei Knöpfe an der Oberseite entsprechen einer Eingabe von Links und Rechts auf dem
+        Steuerkreuz. Die zwei auf der linken Seite Oben und Unen auf dem Steuerkreuz. Die anderen 4 Knöpfe entsprchen
+        den generischen Knöpfen 1, 2, 3, 4. Werden auf dem Steuerkreuz zwei Richtungstasten gleichzeitig gedrückt also
+        z.B. Oben und Rechts ergibt sich die Richtung Oben-Rechts. Folgendes Video zeigt die Funktionalität:
+    </p>
+    <video src="video.mp4" width="320" height="240" controls></video>
+    <p>
+        Im Video werden noch 8 Knöpfe angezeigt dies wurde inzwischen korrigiert und es weden Korrekterweise nuch noch 4
+        angezeigt:
+    </p>
+    <figure>
+        <img class="modalImg" src="12.png">
+        <figcaption>joy.cpl</figcaption>
+    </figure>
+    <h3>Probleme</h3>
+    <p>
+        Leider musste ich feststellen, dass sich wirkliche Spiele nicht ohne weiteres mit meinem Controller spielen
+        lassen. Dieser wird zwar von Windows erkannt aber praktisch von keinem Spiel unterstützt. Die meisten Spiele
+        unterstützen eine Eingabe über die Xinput-Schnittstelle (XBox-Controller). Ein Xinput-Controller kann z.B. über
+        Steam simuliert
+        werden. Auch mein Controller wird von Steam erkannt (siehe linkes Bild) auf diesem stehen wie geplant
+        nur insgesamt 8 Knöpfe zur Verfügung. Diese 8 Knöpfe reichen aber nicht aus um einen vollen Xinput-Controller zu
+        belegen (siehe rechtes Bild) und das hat zur folge das sich mein Controller leider nicht in Steam benutzen
+        lässt.
+    </p>
+    <p>
+        Ebenfalls ist im linken Bild zu erkennen, dass der Controller unter dem merkwürdigen Namen "0-Achse 8-Taste
+        Gerät mit
+        Mehrwegschalter" gelistet wird. Dieser Name lässt sich nicht ohne weiteres ändern da er von der Bluetooth <a
+            href="https://www.bluetooth.com/de/specifications/assigned-numbers/company-identifiers/">Vendor ID</a> und
+        anderen IDs abhängig ist. Eine Vendor ID muss gekauft werden weshalb ich für meinen Controller einfach
+        irgendeine verwendet habe.
+    </p>
+    <figure>
+        <img class="modalImg" src="13.png">
+        <figcaption>Steam Controller Settings</figcaption>
+    </figure>
+    <figure>
+        <img class="modalImg" src="14.png">
+        <figcaption>Button Mapping</figcaption>
+    </figure>
+    <p>
+        Vielleicht kann der Controller mithilfe von anderen Programmen genutzt werden. Auch ein Mapping des Controllers auf Tastatureingaben wärde denkbar. Diese Lösungen wurden im Angesicht der bisher aufgewendeten Zeit nicht mehr ausprobiert.
+    </p>
 
 </body>
 
