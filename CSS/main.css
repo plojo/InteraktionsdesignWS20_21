@@ -7,6 +7,11 @@ figure {
     background-color: #212121;
 }
 
+figcaption {
+    display: block;
+    margin-bottom: 5pt;
+}
+
 body {
     background-color: #181818;
     color: white;
